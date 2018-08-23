@@ -1,0 +1,12 @@
+@import 'bootstrap';
+@import 'reset';
+@import 'fonts';
+@import 'var-mix';
+@import 'main-ltr';
+@import './modules-ltr/header';
+@import 'content-ltr';
+@import './modules-ltr/footer';
+@import './libs-ltr/slick-theme';
+@import './libs-ltr/slick';
+@import 'bootstrap-social';
+@import 'font-awesome';

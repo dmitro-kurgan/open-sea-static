@@ -1,0 +1,45 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'recipes-page';
+	- var classWrapper = 'recipes';
+	- var page = 'recipes';
+
+block title
+	title Recipes
+
+block header
+	include ../modules/header
+	+header()
+
+block main
+	.recipes
+		section.parallax-window.recipes__banner(data-parallax="scroll", data-image-src=require("../../components/images/banner-1.jpg"))
+			h1.wow.fadeInUp בתאבון…
+		section.recipes__slider#recipesSlider
+			.container
+				.slider.slick-recipes
+					mixin slickRecipesItem(img, name, text, btn)
+						div
+							.slick-recipes__item
+								.slick-recipes__inner
+									.slick-recipes__img
+										img(src=require("../../components/images/food-" + img + ".png"), alt="")
+									.slick-recipes__name
+										p #{name}
+									.slick-recipes__text
+										p #{text}
+									.slick-recipes__button
+										a(href="recipes-pg.html").btn #{btn}
+					+slickRecipesItem('1', 'דניס בעגבניות ובצל','מנת דניס פיקנטית עם זיתים וטעם עשיר של דג אמיתי היישר מהחווה שלנו עם  נגיעות עגבניה עוקצניות וגם מעט אניסללקק את האצבעות ', 'למתכון המלא')
+					+slickRecipesItem('2', 'דניס מטוגן בפנקו','מנת דניס פיקנטית עם זיתים וטעם עשיר של דג אמיתי היישר מהחווה שלנו עם  נגיעות עגבניה עוקצניות וגם מעט אניסללקק את האצבעות ', 'למתכון המלא')
+					+slickRecipesItem('3', ' פילה דניס ומרווה','מנת דניס פיקנטית עם זיתים וטעם עשיר של דג אמיתי היישר מהחווה שלנו עם  נגיעות עגבניה עוקצניות וגם מעט אניסללקק את האצבעות ', 'למתכון המלא')
+					+slickRecipesItem('1', 'דניס בעגבניות ובצל','מנת דניס פיקנטית עם זיתים וטעם עשיר של דג אמיתי היישר מהחווה שלנו עם  נגיעות עגבניה עוקצניות וגם מעט אניסללקק את האצבעות ', 'למתכון המלא')
+					+slickRecipesItem('2', 'דניס מטוגן בפנקו','מנת דניס פיקנטית עם זיתים וטעם עשיר של דג אמיתי היישר מהחווה שלנו עם  נגיעות עגבניה עוקצניות וגם מעט אניסללקק את האצבעות ', 'למתכון המלא')
+					+slickRecipesItem('3', 'פילה דניס ומרווה','מנת דניס פיקנטית עם זיתים וטעם עשיר של דג אמיתי היישר מהחווה שלנו עם  נגיעות עגבניה עוקצניות וגם מעט אניסללקק את האצבעות ', 'למתכון המלא')
+				.controls
+					.controls__current
+					.controls__total
+block footer
+	include ../modules/footer
+	+footerContact()

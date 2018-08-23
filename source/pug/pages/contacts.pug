@@ -1,0 +1,50 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'contacts-page';
+	- var classWrapper = 'contacts';
+	- var page = 'contacts';
+
+block title
+	title Contacts
+
+block header
+	include ../modules/header
+	+header()
+
+block main
+	.contacts
+		section.contacts__block(style='background-image: url(' + require('../../components/images/photo-7.jpg') + ')')
+			.container
+				h2 ים פתוח חקלאות ימית בע”מ 
+				ul
+					li
+						p
+							span
+								|טלפון  04-6011770
+							span
+								|פקס:   04-6011880
+					li
+						p
+							span
+								|כתובת: תרשיש 15 פארק תעשיה צפוני קסריה 
+							span
+								|ת.ד 3571
+					li
+						p
+							| mail: office@opensea.co.il
+				h2 מלאו פרטים ונחזור במהרה
+				form
+					.form-group
+						input.form-control(type="text", placeholder="שם:", required)
+					.form-group
+						input.form-control(type="text", placeholder="טלפון:", required)
+					.form-group
+						input.form-control(type="text", placeholder="מייל:", required)
+					.form-group
+						textarea.form-control(type="text", placeholder="הודעה:", required)
+					.form-group
+						button(type="submit").btn שלח
+block footer
+	include ../modules/footer
+	+footerMain()

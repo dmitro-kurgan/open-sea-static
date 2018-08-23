@@ -1,0 +1,47 @@
+// VARIABLES
+//fonts
+
+$font-main: Heebo, Arial, sans-serif;
+// $Calibri: NotoSans, Arial, sans-serif;
+// $PTSerif: Rubik, Arial, sans-serif;
+
+//other
+$main_color: #fff;
+$main_transition: .3s all;
+// $title-spacing: 3px;
+
+//color
+
+$viking: #48B7BC;
+$riptide: #79e6d6;
+$prussian: #003955;
+$grey: #7d7c7c;
+
+// $full-hd: "screen and (max-width: 1869px)";
+// $desctop-lg: "screen and (max-width: 1520px)";
+$desctop-lg: "screen and (max-width: 1599px)";
+$desctop-md: "screen and (max-width: 1399px)";
+
+$desctop: "screen and (max-width: 1299px)";
+$tablet: "screen and (max-width: 991px)";
+$mobile: "screen and (max-width: 767px)";
+
+//MIXINS
+
+$prefixes: "-webkit-", "-o-", "-moz-", "-ms-";
+
+@mixin addPrefix($item, $val) {
+	@each $tmp in $prefixes {
+		#{$tmp}#{$item}:#{$val};
+	}
+	#{$item}: $val;
+}
+
+$prefixes-placeholder: "&::-webkit-input-", "&::-moz-", "&:-moz-", "&:-ms-";
+
+@mixin addPrefixPlaceholder($placeholder, $item, $val) {
+	@each $tmp in $prefixes-placeholder {
+		#{$tmp}#{$placeholder}{#{$item}:#{$val}};
+	}
+	#{$placeholder}{#{$item}: $val};
+}

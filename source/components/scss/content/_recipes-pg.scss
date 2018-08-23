@@ -1,0 +1,229 @@
+.recipes-pg {
+	&__banner {
+		min-height: 250px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		@media #{$mobile} {
+			min-height: 200px;
+		}
+		h1 {
+			color: #fff;
+			font-size: 64px;
+			font-weight: 700;
+			@media #{$mobile} {
+				font-size: 42px;
+			}
+		}
+	}
+	&__title {
+		span {
+			font-size: 36px;
+			font-weight: 700;
+			line-height: 1.39;
+			color: $prussian;
+			@media #{$mobile} {
+				font-size: 30px;
+			}
+			img {
+				@include addPrefix(transform, translate(0px, 5px));
+				margin-left: 15px;
+				@media #{$mobile} {
+					display: none;
+				}
+			}
+		}
+	}
+	&__info {
+		margin: 30px 0 15px 0;
+		display: flex;
+		align-items: center;
+		font-size: 24px;
+		line-height: 1.17;
+		letter-spacing: -0.4px;
+		color: #5392a9;
+		@media #{$mobile} {
+			display: block;
+		}
+		& > span {
+			display: block;
+			div {
+				display: inline-block;
+				margin-left: 15px;
+				&.connect {
+					width: 30px;
+					height: 20px;
+					overflow: hidden;
+					transform: scale(1,-1);
+					span {
+						float: left;
+						width: 3px;
+						border-radius: 15px;
+						background-color: #7cb6cb;
+						& + span {
+							margin-left: 3px;
+						}
+					}
+					.connect {
+						&__1 {
+							height: 7px;
+						}
+						&__2 {
+							height: 10px;
+						}
+						&__3 {
+							height: 13px;
+						}
+						&__4 {
+							height: 17px;
+						}
+						&__5 {
+							height: 20px;
+						}
+					}
+				}
+			}
+			& + span {
+				margin-right: 15px;
+				@media #{$mobile} {
+					margin-right: 0px;
+					margin-top: 15px;
+				}
+			}
+			img {
+				@include addPrefix(transform, translate(0px, 3px))
+				height: 21px;
+			}
+		}
+	}
+	section {
+		h2 {
+			font-size: 30px;
+			color: $viking;
+			font-weight: 700;
+			margin-bottom: 30px;
+			@media #{$mobile} {
+				font-size: 24px;
+			}
+		}
+	}
+	&__section {
+		padding: 50px 0 50px 0;
+		&--alice-blue {
+		    padding: 65px 0 105px 0;
+			background-color: #eff7fa;
+			position: relative;
+		}
+		p {
+			font-size: 20px;
+			line-height: 2.25;
+			color: #4a4a4a;
+		}
+		ul {
+			li {
+				& + li {
+					margin-top: 25px;
+				}
+				p {
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+	&__liked {
+		padding-bottom: 140px;
+		@media #{$mobile} {
+			padding-bottom: 75px;
+		}
+		h2 {
+			margin-top: 60px;
+			@media #{$mobile} {
+				margin-top: 40px;
+			}
+		}
+		&-item {
+			text-align: center;
+			position: relative;
+			@media #{$mobile} {
+				max-width: 320px;
+				margin: auto;
+				& + li {
+					margin-top: 50px;
+				}
+			}
+		}
+		&-img {
+			height: 302px;
+			margin: auto;
+			@media #{$desctop} {
+				height: 225px;
+			}
+			@media #{$mobile} {
+				height: 285px;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				@include addPrefix(object-fit, cover);
+				@include addPrefix(filter, drop-shadow(3px 3px 6px rgba(#000, 0.39)));
+			}
+		}
+		&-inner {
+			padding: 30px 50px;
+			@media #{$desctop} {
+				padding: 15px 25px;
+			}
+			@media #{$tablet} {
+				padding: 0px;
+			}
+		}
+		&-name {
+			font-size: 21px;
+			font-weight: 700;
+			color: $prussian;
+			margin-top: 36px;
+			margin-bottom: 25px;
+			@media #{$mobile} {
+				margin-top: 25px;
+				margin-bottom: 15px;
+			}
+		}
+		&-text {
+			font-size: 14px;
+			font-weight: 500;
+			letter-spacing: 0.2px;
+			color: $grey;
+			line-height: 1.75;
+			@media #{$desctop} {
+				min-height: 100px;
+			}
+			@media #{$mobile} {
+				min-height: initial;
+			}
+		}
+		&-button {
+			margin-top: 32px;
+			.btn {
+				padding: 12px;
+				max-width: 246px;
+				margin: auto;
+				font-size: 18px;
+				font-weight: 500;
+				color: #fff;
+				width: 100%;
+				color: $viking;
+				height: 52px;
+				background-color: transparent;
+				border-radius: 14.4px;
+				border: 2.4px solid $viking;
+				&:hover {
+					background-color: $viking;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

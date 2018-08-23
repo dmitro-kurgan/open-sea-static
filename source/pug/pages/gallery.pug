@@ -1,0 +1,61 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'gallery-page';
+	- var classWrapper = 'gallery';
+	- var page = 'gallery';
+
+block title
+	title Gallery
+
+block header
+	include ../modules/header
+	+header()
+
+block main
+	.gallery
+		section.parallax-window.gallery__banner(data-parallax="scroll", data-image-src=require("../../components/images/banner-1.jpg"))
+			h1.wow.fadeInUp מעולמנו הימי
+		section.gallery__block
+			.container
+				ul.gallert__list
+					mixin video(height)
+						.gallery__video
+							video(style='background-color: #000;height: ' + height + 'px')
+							.gallery__name
+								p רוני הצוללן בסוף יום עבודה מתיש
+							.gallery__info
+								p רוני הצוללן בסוף יום עבודה מתיש עייף ושמח
+					mixin galleryItem(img)
+						.gallery__item
+							if block
+								block
+							else
+								.gallery__item-inner
+									.gallery__img
+										img(src=require('../../components/images/photo-' + img + '.jpg'), alt="")
+									.gallery__name
+										p רוני הצוללן בסוף יום עבודה מתיש
+									.gallery__info
+										p רוני הצוללן בסוף יום עבודה מתיש עייף ושמח
+					li.col-sm-4
+						+galleryItem('8')
+						+galleryItem('', '')
+							+video('626')
+						+galleryItem('9')
+						+galleryItem('10')
+					li.col-sm-4
+						+galleryItem('11')
+						+galleryItem('5')
+						+galleryItem('1')
+						+galleryItem('8')
+						+galleryItem('11')
+					li.col-sm-4
+						+galleryItem('7')
+						+galleryItem('', '')
+							+video('489')
+						+galleryItem('10')
+						+galleryItem('12')
+block footer
+	include ../modules/footer
+	+footerMain()

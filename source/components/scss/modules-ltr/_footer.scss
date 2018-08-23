@@ -1,0 +1,275 @@
+footer {
+	.footer {
+		background-color: $prussian;
+		&--main {
+			.footer__content {
+				justify-content: start;
+				position: relative;
+			}
+			.footer__contacts {
+				ul {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		&__right-side {
+			padding-right: 160px;
+			display: flex;
+			align-items: center;
+			@media #{$desctop} {
+				padding-right: 80px;
+			}
+			@media #{$tablet} {
+				padding-right: 0px;
+				// padding-top: 155px;
+				padding-bottom: 40px;
+				margin-top: 15px;
+				width: 100%;
+			}
+			@media #{$mobile} {
+				padding-right: 0px;
+				padding-top: 0px;
+			}
+			a {
+				display: block;
+				width: 99px;
+				height: 82px;
+				background-size: contain;
+				background: url(../images/fish-2.png)no-repeat center;
+				background-color: #000;
+			}
+		}
+		&__left-side {
+			position: absolute;
+			right: -30px;
+			bottom: 0px;
+			top: 0px;
+			margin: auto;
+			height: 84px;
+			@media #{$tablet} {
+				display: none;
+			}
+			span {
+				display: block;
+				width: 99px;
+				height: 82px;
+				background-size: contain;
+				background: url(../images/fish-2.png)no-repeat center;
+				background-color: #000;
+			}
+		}
+		&__content {
+			display: flex;
+			justify-content: space-between;
+			padding: 23px 0;
+			@media #{$tablet} {
+				display: block;
+			}
+			h6 {
+				color: $viking;
+				font-size: 14px;
+				line-height: 1.64;
+				font-weight: 700;
+				margin-bottom: 18px;
+				@media #{$desctop} {
+					font-size: 12px;
+				}
+			}
+			ul {
+				li {
+					font-size: 14px;
+					line-height: 1.79;
+					color: #fff;
+					@media #{$desctop} {
+						font-size: 12px;
+					}	
+				}
+			}
+			& > div {
+				@media #{$tablet} {
+					float: left;
+				}
+				@media #{$mobile} {
+					float: none;
+				}
+			}
+		}
+		&__menu, &__socials, &__contacts {
+			@media #{$tablet} {
+				width: 33%;
+			}
+			@media #{$mobile} {
+				width: 100%;
+			}
+			ul {
+				position: relative;
+				padding-right: 40px;
+				margin-right: 40px;
+				@media #{$desctop} {
+					padding-right: 25px;
+					margin-right: 25px;
+				}
+				@media #{$tablet} {
+					padding-right: 50px;
+					margin-right: 50px;
+				}
+				@media #{$mobile} {
+					padding-right: 0px;
+					margin-right: 0px;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					top: 0px;
+					right: 0px;
+			 		width: 2px;
+					height: 122px;
+					border: solid 1px #ffffff;
+					@media #{$mobile} {
+						border: none;
+					}
+				}
+			}
+		}
+		&__socials, &__contacts {
+			@media #{$mobile} {
+				margin-top: 20px;
+			}
+		}
+		&__socials {
+			span {
+				margin-right: 11px;
+				width: 22px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			li {
+				& + li {
+					margin-top: 5px;
+				}
+			}
+			&--fb {
+				span {
+					background-image: url(../images/facebook.svg);
+					height: 23px;
+				}
+			}
+			&--insta {
+				span {
+					background-image: url(../images/instagram.svg);
+					// height: 22px;
+					height: 20px;
+				}
+			}
+			&--youtube {
+				span {
+					background-image: url(../images/youtube.svg);
+					// height: 16px;
+					height: 22px;
+				}
+			}
+		}
+		&__contacts {
+			ul {
+				@media #{$tablet} {
+					padding-right: 0px;
+					margin-right: 0px;
+					&:after{
+						display: none;
+					}
+				}
+			}
+			span, p {
+				display: inline-block;
+			}
+			span {
+				@media #{$tablet} {
+					display: block;
+				}
+				& + span {
+					&:before {
+						content: '|';
+						padding-right: 10px;
+						padding-left: 10px;
+						@media #{$tablet} {
+							display: none;
+						}
+					}
+				}
+				p, a {
+					margin-left: 5px;
+				}
+			}
+		}
+		&__form {
+			width: 225px;
+			@media #{$desctop} {
+				width: 200px;
+			}
+			@media #{$tablet} {
+				margin-top: 35px;
+			}
+			@media #{$mobile} {
+				width: 290px;
+			}
+			.form-control {
+				height: 32px;
+				font-size: 14px;
+				color: #fff;
+				background-color: transparent;
+  				border: solid 1px rgba(#ffffff, 0.37);
+  				border-radius: 0px;
+			}
+			.form-group {
+				&:last-child {
+					margin-bottom: 0px;
+				}
+			}
+			.btn {
+				width: 223px;
+				height: 36px;
+				border-radius: 2px;
+				background-color: $viking;
+				font-size: 14px;
+				font-weight: 700;
+				color: #fff;
+				padding: 8px 12px;
+				@media #{$desctop} {
+					width: 100%;
+				}
+			}
+			textarea.form-control {
+				resize: none;
+				height: 56px;
+			}
+		}
+		&__logo {
+			padding-left: 155px;
+			display: flex;
+			align-items: flex-end;
+			@media #{$desctop} {
+				padding-left: 40px;
+			}
+			@media #{$tablet} {
+				padding-left: 420px;
+				margin-top: 35px;
+			}
+			@media #{$mobile} {
+				padding-left: 0px;
+			}
+			a {
+				display: block;
+				width: 99px;
+				height: 82px;
+				background-size: contain;
+				background: url(../images/fish-2.png)no-repeat center;
+				background-color: #000;
+			}
+		}
+	}
+}

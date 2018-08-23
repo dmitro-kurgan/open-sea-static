@@ -1,0 +1,267 @@
+.faq {
+	&__banner {
+		min-height: 250px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+    @media #{$mobile} {
+      min-height: 200px;
+    }
+		h1 {
+			color: #fff;
+			font-size: 64px;
+			font-weight: 700;
+      @media #{$tablet} {
+        font-size: 42px;
+      }
+       @media #{$mobile} {
+        font-size: 24px;
+      }
+		}
+	}
+	&__list {
+		padding: 50px 0 35px 0;
+		li.faq__item:nth-child(even) {
+			.faq__item-inner {
+				background-color: #e4f1fd;
+			}
+		}
+	}
+	&__item {
+		margin-bottom: 40px;
+  		&-inner {
+  			background-color: #ffffff;
+  			padding: 0 50px;
+  			position: relative;
+  			border: solid 1px #113260;
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+  			height: 300px;
+  			&:hover {
+  				.faq__answer {
+  					visibility: visible;
+  					opacity: 1;
+  				}
+  			}
+  		}
+	}
+	&__num {
+		top: 16px;
+		left: 14px;
+		position: absolute;
+		height: 58px;
+		width: 58px;
+		background-color: $prussian;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 30px;
+		gont-weight: 500;
+		color: #fff;
+	}
+	&__question, &__answer {
+		font-size: 24px;
+		font-weight: 500;
+	}
+	&__question {
+		text-align: center;
+		color: $prussian;
+	}
+	&__answer {
+		opacity: 0;
+	    visibility: hidden;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		margin: auto;
+		transition: 0.3s all ease;
+		color: #fff;
+		&-inner {
+			padding: 30px;
+			height: 100%;
+			background-color: $prussian;
+		}
+	}
+}
+
+/*************** SCROLLBAR BASE CSS ***************/
+ 
+.scroll-wrapper {
+	height: 240px;
+    overflow: hidden !important;
+    // padding: 0 !important;
+    position: relative;
+}
+ 
+.scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+}
+ 
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+ 
+.scroll-element {
+    display: none;
+}
+.scroll-element, .scroll-element div {
+    box-sizing: content-box;
+}
+ 
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+}
+ 
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+    cursor: default;
+}
+ 
+.scroll-textarea {
+    border: 1px solid #cccccc;
+    border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+    overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+ 
+ 
+ 
+ 
+/*************** SIMPLE INNER SCROLLBAR ***************/
+ 
+.scrollbar-inner > .scroll-element,
+.scrollbar-inner > .scroll-element div
+{
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+ 
+.scrollbar-inner > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+ 
+.scrollbar-inner > .scroll-element.scroll-x {
+    bottom: 2px;
+    height: 8px;
+    left: 0;
+    width: 100%;
+}
+ 
+.scrollbar-inner > .scroll-element.scroll-y {
+    height: 100%;
+    right: 0px;
+    top: 0;
+    width: 8px;
+  //   &:before, &:after {
+  //   	content: '';
+  //   	position: absolute;
+  //   	background: url(../images/scroll-arrow.png)no-repeat;
+  //   	width: 7px;
+  //   	height: 6px;
+		// pointer-events: none;
+		// right: 1.5px;
+		// z-index: 99;
+  //   }
+  //   &:before {
+  //   	top: 4px;
+  //   }
+  //   &:after {
+  //   	bottom: 4px;
+  //   	@include addPrefix(transform, rotate(180deg));
+  //   }
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_outer {
+    overflow: hidden;
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_outer,
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    // -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    // filter: alpha(opacity=40);
+    // opacity: 0.4;
+    transition: .3s filter, .3s opacity;
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_track { background-color: $prussian; }
+.scrollbar-inner > .scroll-element .scroll-bar { 
+	background-color: rgba(#fff, 1);
+	// background: url(../images/scroll.png)no-repeat center;
+	// width: 10px;
+	// height: 24px;
+	// background-size: cover;
+}
+.scrollbar-inner > .scroll-element:hover .scroll-bar {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+ 
+ 
+/* update scrollbar offset if both scrolls are visible */
+ 
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+ 
+ 
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }

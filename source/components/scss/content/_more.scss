@@ -1,0 +1,117 @@
+.more {
+	&__banner {
+		min-height: 250px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin-bottom: 77px;
+		@media #{$mobile} {
+			margin-bottom: 40px;
+		}
+		h1 {
+			color: #fff;
+			font-size: 64px;
+			font-weight: 700;
+			@media #{$tablet} {
+				font-size: 42px;
+			}
+			@media #{$mobile} {
+				font-size: 24px;
+			}
+		}
+	}
+	hr {
+		border-top: 1px solid transparent; 
+	}
+	section {
+		h2 {
+			font-size: 36px;
+			line-height: 1.39;
+			color: $prussian;
+			font-weight: 700;
+			margin-bottom: 30px;
+			img {
+				margin-left: 10px;
+				display: inline-block;
+			}
+		}
+		p {
+			font-size: 20px;
+			line-height: 2.25;
+			color: #4a4a4a;
+		}
+	}
+	&__section {
+		padding: 70px 0 0px 0;
+		&--blue {
+		    margin-top: 50px;
+			padding-bottom: 65px;
+			background-color: #e4f1fd;
+			position: relative;
+		}
+		&-right {
+			width: 50%;
+			margin: 0px 0px 0px auto;
+			@media #{$tablet} {
+				width: 100%;
+			}
+		}
+	}
+	&__img {
+		width: 669px;
+		left: 0px;
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		height: 772px;
+		margin: auto;
+		@media #{$desctop} {
+			width: 481px;
+			height: 600px;
+		}
+		@media #{$tablet} {
+			display: none;
+		}
+		img {
+			height: 100%;
+			@include addPrefix(object-fit, contain);
+		}
+	}
+	&__text {
+		padding: 40px 0;
+		@media #{$tablet} {
+			padding: 30px 0;
+		}
+	}
+	&__photo {
+		height: 450px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		@media #{$tablet} {
+			height: 350px;
+		}
+		@media #{$mobile} {
+			height: 250px;
+		}
+	}
+	&__bitmap {
+		overflow: hidden;
+		&-block {
+			height: 280px;
+			position: relative;
+		}
+		img {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			height: 100%;
+			height: 400px;
+			width: 400px;
+			@include addPrefix(object-fit, contain);
+		}
+	}
+}

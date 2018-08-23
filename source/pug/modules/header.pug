@@ -1,0 +1,31 @@
+mixin header()
+	header
+		.header
+			.container
+				.header__content
+					block
+					.header__hamburger#hamburger
+						span.top
+						span.mid
+						span.bottom
+					.header__top
+						.header__logo
+							a(href="./")
+					.header__main#menu
+						ul
+							li
+								a(class=(page === 'index') ? "active" : "" href="index.html") קצת עלינו
+							li
+								a(class=(page === 'team') ? "active" : "" href="team.html") הצוות 
+							li
+								a(class=(page === 'about') ? "active" : "" href="about.html") הסביבה ואנחנו 
+							li
+								a(class=(page === 'tech') ? "active" : "" href="tech.html") הטכנולגיה 
+							li
+								a(class=(page === 'recipes') ? "active" : "" href="recipes.html") מתכונים 
+							li
+								a(class=(page === 'faq') ? "active" : "" href="faq.html") שאלות ותשובות
+							li
+								a(class=(page === 'gallery') ? "active" : "" href="gallery.html") גלריה
+							li
+								a(class=(page === 'contacts') ? "active" : "" href="contacts.html") צור קשר

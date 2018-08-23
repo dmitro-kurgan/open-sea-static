@@ -1,0 +1,132 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'index-page';
+	- var classWrapper = 'index';
+	- var page = 'index';
+
+block title
+	title Home
+
+block header
+	include ../modules/header
+	+header()
+		.header__lang
+			a(href="#") En
+block main
+	.home
+		.home__banner
+			video(src="", style='background-color: #000;')
+			.home__banner-desc
+				h1.wow.fadeInUp לסיפור היחודי שלנו 
+			a(href="#homeAbout").home__banner-down
+		section.home__about#homeAbout
+			.container
+				span
+					|חברת ים פתוח חקלאות ימית בע"מ נוסדה בשנת 2015 במטרה לחולל שינויי בתעשיית החקלאות הימית בישראל.לצד החשיבות העצומה בהקטנת התלות של מדינת ישראל בייבוא דגי ים טריים ממדינות זרות ארצה, שמה לה חברת ים פתוח כיעד מרכזי, לספק לצרכן הישראלי דג נקי יותר, בריא יותר, טבעי יותר ובהכרח גם טעים יותר
+				ul.row.home__about-list
+					mixin li(icon, name, text)
+						li.col-sm-4.home__about-item
+							.home__about-inner
+								.home__about-img
+									img(src=require("../../components/images/icon-" + icon + '.svg'), alt="")
+								.home__about-name
+									p #{name}
+								.home__about-text
+									p #{text}
+					+li('1', 'החווה', 'תפעולה של החווה בלב הים, מתאפשר הודות  טכניקה הדומה לזו של צוללות.')
+					+li('2', 'הגישה שלנו', 'חברת ים פתוח חרטה על דגלה לשאוף ולגדל את הדגים הבריאים והנקיים ביותר')
+					+li('3', 'קצת עלינו', 'חברת ים פתוח שמה לה למטרה לחולל שינויי בתעשיית החקלאות הימית בישראל.')
+				a(href="#").btn
+					|קרא עוד..
+		section.home__team
+			.container
+				h2
+					|הצוות שלנו
+					img(src=require("../../components/images/fish.png"), alt="")
+				.slider.slick-main
+					mixin slickMain(img)
+						div
+							.slick-main__img(style="background-image: url(" + require('../../components/images/photo-' + img + '.jpg') + ")")
+					+slickMain('1')
+					+slickMain('2')
+					+slickMain('3')
+					+slickMain('4')
+					+slickMain('5')
+					+slickMain('6')
+		section.home__environment(style="background-image: url(" + require('../../components/images/photo-18.jpg') + ")")
+			.container
+				.row
+					.col-sm-6
+						.home__environment-video
+							video(src="")
+					.col-sm-6
+						h2
+							|שומרים על הסביבה
+						.truncate
+							p
+								|הסביבה ואנחנו - החקלאות הימית והעלמות הדגים מהים-תעשיית מאכלי הים בעולם חווה שינויים דרמטיים בדורות האחרונים. כיום, אוכלוסיית הדגים החופשיים בעולם כולו נמצאת בירידה חדה וקיים חשש ממשי להיעלמותה וזאת בתוך עשרות שנים בודדות בלבד. כבר היום, 85% ממיני הדגים האכילים כבר הוכחדו או נמצאים במצב של דייג יתר.
+								|היקף הדייג המסחרי בעולם נמצא במגמת ירידה דרסטית ובמקומות רבים בעולם הוא מוגבל ברגולציות וחוקים אשר אמורים למנוע אותו לחלוטין או להגבילו לעונות מסוימות וכדומה.בעוד שאוכלוסיית העולם רק הולכת וגדלה, 15-20 אחוזים מתצרוכת החלבון בעולם מקורה בדגים. לתעשיית הדגים כמקור חלבון יש את ההשפעה הסביבתית הנמוכה ביותר בהשוואה לכל מקורות החלבון האחרים.מומחים מעריכים כי ב- 50 השנים הקרובות העולם יזדקק לכמות גדולה יותר של מזון ממה שהוא צרך ב 10,000 השנים האחרונות גם יחד! לצד נתון זה, למעלה מ 50% ממאגר אוכלוסיית הדגים בים כבר נוצל ובאם הדייג החופשי יימשך באותו הקצב, כלל הדגים בים ייעלמו לקראת שנת 2048. חשיבותה של החקלאות הימית אם כן הינה קריטית, וזאת בהנחה שהיא מתבצעת בהרמוניה מלאה עם הטבע.החקלאות הימית מייצגת את הפתרון הטוב ביותר להאכלת אוכלוסיית העולם בעתיד ואולם, יש צורך לוודא שלשיטת הגידול לא תהיה השפעה שלילית על הסביבה בה הדגים גדלים ובעיקר על הדגים עצמם.אנו בחברת ים פתוח שמנו לנו כמטרה, לגדל את הדגים הבריאים ביותר שניתן בתנאי הגידול הקרובים ביותר לתנאי המחייה הטבעיים של הדגים ובמינימום פגיעה בסביבה. מלבד היתרונות הבריאותיים הברורים, בחירה בדגי ים פתוח מסייעת בשימור והגנה על דגי הבר ותומכת במערכת האקולוגית בים.
+		section.home__recipes
+			.home__recipes-img
+				img(src=require("../../components/images/food-6.png"), alt="")
+			.container
+				h2
+					|דניס שלם בתנור עם מרווה ושום
+				.recipes-pg__info
+					span
+						div
+							img(src=require("../../components/images/clock.svg"), alt="")
+						| זמן הכנה : 6 דק’
+						
+					span
+						div.connect
+							span.connect__1
+							span.connect__2
+							span.connect__3
+							span.connect__4
+							span.connect__5
+						|דרגת קושי:  קל
+				ul
+					li
+						p
+							|מתכון קל הכנה וטעים להפליא 
+					li
+						p
+							|המשלב את טעמם האמיתי של דגי הדניס 
+					li
+						p
+							|עם הארומה הנעימה של המרווה והשום
+					li
+						p
+							|קל להכנה וטעים להפליא
+				a(href="#").btn לעוד מתכונים 
+		section.home__farm
+			.container
+				h2
+					|החווה שלנו
+				.home__farm-3d
+			.home__farm-img(style="background-image: url(" + require('../../components/images/banner-1.jpg') + ")")
+		section.home__gallery
+			.container
+				h2
+					| גלריה
+					img(src=require("../../components/images/fish.png"), alt="")
+				ul.row.home__gallery-list
+					mixin li(img)
+						li.col-sm-6.col-md-4.home__gallery-item
+							a.home__gallery-img(href="#", style="background-image: url(" + require('../../components/images/photo-' + img + '.jpg') + ")")
+								.home__gallery-hidden
+									h4
+										| ישראל ישראלי 
+										p חווית דייג
+					+li('13')
+					+li('14')
+					+li('15')
+					+li('16')
+					+li('17')
+					+li('13')
+				a(href="#").btn לתמונות נוספות
+block footer
+	include ../modules/footer
+	+footerMain()

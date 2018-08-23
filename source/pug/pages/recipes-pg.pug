@@ -1,0 +1,96 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'recipes-page';
+	- var classWrapper = 'recipes';
+	- var page = 'recipes';
+
+block title
+	title Recipes page
+
+block header
+	include ../modules/header
+	+header()
+
+block main
+	.recipes-pg
+		section.parallax-window.recipes-pg__banner(data-parallax="scroll", data-image-src=require("../../components/images/banner-1.jpg"))
+			h1.wow.fadeInUp בתאבון…
+		section.recipes-pg__section
+			.container
+				.recipes-pg__title
+					span
+						img(src=require("../../components/images/fish.png"), alt="")
+						| דניס בעגבניות ובצל
+				.recipes-pg__info
+					span
+						div
+							img(src=require("../../components/images/clock.svg"), alt="")
+						| זמן הכנה : 6 דק’
+						
+					span
+						div.connect
+							span.connect__1
+							span.connect__2
+							span.connect__3
+							span.connect__4
+							span.connect__5
+						|דרגת קושי:  קל
+				h2 רכיבים
+				ul
+					li
+						p
+							| 2 דגי דניס שלמים ונקיים (סה"כ 1 ק"ג)
+					li
+						p
+							| 3 כפות שמן זית
+					li
+						p
+							| 4-5 שיני שום פרוסות/קצוצות
+					li
+						p
+							| 4 כפות מיץ לימון
+					li
+						p
+							| כפית תבלין כוסברה ופטרוזיליה (ניתן להשתמש גם בעלים טריים קצוצים דק)
+					li
+						p
+							| כפית שטוחה פפריקה מתוקה
+					li
+						p
+							| חצי כפית מלח, פלפל שחור לפי הטעם
+		section.recipes-pg__section.recipes-pg__section--alice-blue
+			.container
+				h2 הוראות הכנה
+					img(src="", alt="")
+				p
+					|חותכים את הדג לאורכו ובעזרת סכין חורצים את בשר הדג לעומק משני הצדדים (כ-3 חתכים מכל צד, בחלקו החיצוני).
+				p
+					|מערבבים את כל החומרים בקערית ומתבלים את הדג מבחוץ, מבפנים ובין החריצים.
+				br
+				p
+					|מניחים את הדגים בתבנית ומכניסים לתנור שחומם מראש ל- 190 מעלות במשך 25-30 דקות
+
+				p
+					| (ב-5 דקות האחרונות ניתן להגביר את חום התנור לחום גבוה מאוד כדי להשחים את הדגים).
+		section.recipes-pg__liked
+			.container
+				h2 אולי תאהב גם …
+				ul.recipes-pg__liked-list.row
+					mixin recipesItem(img, name, text)
+						li.recipes-pg__liked-item.col-sm-4
+							.recipes-pg__liked-inner
+								.recipes-pg__liked-img
+									img(src=require("../../components/images/food-" + img + ".png"), alt="")
+								.recipes-pg__liked-name
+									p #{name}
+								.recipes-pg__liked-text
+									p #{text}
+								.recipes-pg__liked-button
+									a(href="recipes-pg.html").btn למתכון המלא
+					+recipesItem('1', 'פילה דניס ומרווה', 'הטעם היחודי של הדניס שלנו בשילוב עם עדינות המרווה  בצל סגול ועגבניות בשלות טעם עדין יחודי ובלתי נשכח מנה  מרעננת וקיצית')
+					+recipesItem('2', 'דניס בעגבניות ובצל','מנת דניס פיקנטית עם זיתים וטעם עשירשל דג אמיתי היישר מהחווה שלנו עם  נגיעות עגבניה עוקצניות וגם מעט אניסללקק את האצבעות ')
+					+recipesItem('3', 'דניס מטוגן בפנקו', 'מנת דג טעימה וקלילהשל השף ישראל אהרונידניס טרי עם פרורי פנקו פרכיםמנה שילדים אוהבים במיוחד')
+block footer	
+	include ../modules/footer
+	+footerMain()

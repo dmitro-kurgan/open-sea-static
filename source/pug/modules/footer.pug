@@ -1,0 +1,117 @@
+mixin footerContact()
+	footer
+		.footer
+			.container
+				.footer__content.clearfix
+					.footer__menu
+						h6 מפת אתר
+						ul
+							mixin li(text, link)
+								li
+									a(href= link) #{text}
+							+li('הסיפור שלנו ', './')
+							+li('הצוות ', 'team.html')
+							+li('הסביבה ואנחנו', 'about.html')
+							+li('מתכונים ', 'recipes.html')
+							+li('דרושים', '#')
+							+li('צור קשר ', 'contacts.html')
+					.footer__socials
+						h6 הצטרפו לקהילות שלנו
+						ul
+							li
+								a(href="https://facebook.com", target="_blank").footer__socials--fb
+									span
+									|עמוד ים פתוח
+							li
+								a(href="https://instagram.com", target="_blank").footer__socials--insta
+									span
+									| ים פתוח באינסטגרם
+							li
+								a(href="https://youtube.com", target="_blank").footer__socials--youtube
+									span
+									| ערוץ ים פתוח דגים בטבע
+					.footer__contacts
+						h6 פרטי צור קשר
+						ul
+							li
+								a(href="#") ים פתוח חקלאות ימית בע”מ   
+							li
+								span
+									|טלפון
+									a(href="tel:046011770") 04-6011770 
+								span
+									|פקס:
+									p 04-6011880
+							li
+								a(href="#") כתובת: תרשיש 15 פארק תעשיה צפוני קסריה 
+							li
+								a(href="#") ת.ד 3571
+							li
+								a(href="mailto:office@opensea.co.il") mail: office@opensea.co.il
+					.footer__form
+						h6 מלאו פרטים ונחזור במהרה
+						form
+							.form-group
+								input.form-control(type="text", required)
+							.form-group
+								input.form-control(type="text", required)
+							.form-group
+								textarea.form-control()
+							.form-group
+								button(type="submit").btn שלח
+					.footer__logo
+						a(href="./")
+mixin footerMain()
+	footer
+		.footer.footer--main
+			.container
+				.footer__content.clearfix
+					.footer__right-side
+						a(href="./")
+					.footer__menu
+						h6 מפת אתר
+						ul
+							mixin li(text, link)
+								li
+									a(href= link) #{text}
+							+li('הסיפור שלנו ', './')
+							+li('הצוות ', 'team.html')
+							+li('הסביבה ואנחנו', 'about.html')
+							+li('מתכונים ', 'recipes.html')
+							+li('דרושים', '#')
+							+li('צור קשר ', 'contacts.html')
+					.footer__socials
+						h6 הצטרפו לקהילות שלנו
+						ul
+							li
+								a(href="https://facebook.com", target="_blank").footer__socials--fb
+									span
+									|עמוד ים פתוח
+							li
+								a(href="https://instagram.com", target="_blank").footer__socials--insta
+									span
+									| ים פתוח באינסטגרם
+							li
+								a(href="https://youtube.com", target="_blank").footer__socials--youtube
+									span
+									| ערוץ ים פתוח דגים בטבע
+					.footer__contacts
+						h6 פרטי צור קשר
+						ul
+							li
+								a(href="#") ים פתוח חקלאות ימית בע”מ   
+							li
+								span
+									|טלפון
+									a(href="tel:046011770") 04-6011770 
+								span
+									|פקס:
+									p 04-6011880
+							li
+								a(href="#") כתובת: תרשיש 15 פארק תעשיה צפוני קסריה 
+							li
+								a(href="#") ת.ד 3571
+							li
+								a(href="mailto:office@opensea.co.il") mail: office@opensea.co.il
+					.footer__left-side
+						img(src=require("../../components/images/fish-2.png"), alt="")
